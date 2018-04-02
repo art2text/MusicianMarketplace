@@ -1,0 +1,138 @@
+/***
+fontpage.css: all styling for front page landing document
+***/
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+html {
+	position: relative;
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	position: relative;
+	height: 100%;
+	width: 100%;
+	font-family: Tahoma, Geneva, sans-serif;
+}
+
+/*** Header styling ***/
+#header {
+	position: relative;
+	height: 15%;
+	width: 100%;
+	background: white;
+	box-sizing: border-box;
+	border-bottom: 3px solid #87cefa;
+}
+
+/* 2.348 aspect ratio */
+#header img {
+	position: absolute;
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	height: 98%;
+}
+
+#header .signing {
+	background: black;
+	color: white;
+	padding: 15px;
+	border-radius: 10px;
+	font-size: 1.2em;
+	float: right;
+	margin: 10px 10px;
+}
+
+#header .signing:nth-child(2) {
+	margin-right: 50px;
+}
+
+
+/*** modal styling ***/
+
+.modal-header {
+	background: black;
+	color: white;
+}
+
+.modal-header .close {
+	color: red;
+	opacity: 1.0;
+	text-shadow: none;
+}
+
+#signupChoice .modal-body {
+	text-align: center;
+}
+
+#signupChoice .modal-body h3 {
+	margin: 15px;
+}
+
+#signupChoice .modal-body .special {
+	padding: 15px;
+	border-radius: 10px;
+	font-size: 1.2em;
+	background: black;
+	color: white;
+	border: 0;
+	margin: 0 20px;
+	width: 200px;
+}
+
+.black-button {
+	border-radius: 10px;
+	font-size: 1.2em;
+	background: black;
+	color: white;
+	padding: 10px;
+}
+
+.black-button:hover {
+	color: #87cefa;
+	background: black;
+}
+
+#header .signing:hover, #signupChoice .modal-body .special:hover {
+	color: #87cefa;
+}
+
+/*** Main content below header styling ***/
+
+#mainFrontPicture {
+	position: relative;
+	height: 85%;
+	width: 100%;
+	background-image: url('musician.jpg');
+	background-repeat: no-repeat;
+	background-position: 0 -250px; 
+}
+
+#description {
+	position: absolute;
+	left: 50%;
+	height: 100%;
+	width: 50%;
+	text-align: center;
+}
+
+#description h1 {
+	margin: 0;
+}
+
+#description h1 span {
+	font-size: 0.7em;
+	background: white;
+	border-radius: 15px;
+	padding: 20px;
+	border: 2px solid #87cefa;
+	background: black;
+	color: white;
+}
+
