@@ -51,7 +51,7 @@ body {
 	width: 40%;
 	display: inline-block;
 	text-align: center;
-	border-right: 3px solid #87cefa;
+	border-right: 3px dotted #f0ad4e;
 	box-sizing: border-box;
 }
 
