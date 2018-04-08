@@ -1,0 +1,91 @@
+/***
+profile.css: all styling for profile page document
+***/
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+html {
+	position: relative;
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	position: relative;
+	height: 100%;
+	width: 100%;
+	font-family: Tahoma, Geneva, sans-serif;
+}
+
+/*** Header styling ***/
+#header {
+	width: 100%;
+	height: 15%;
+	text-align: center;
+	border-bottom: 3px solid #87cefa;
+	box-sizing: border-box;
+}
+
+#header img {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	height: 98%;
+}
+
+/*** profile's main information ***/
+#mainInfo {
+	position: relative;
+	width: 100%;
+	height: 85%;
+	background: #e8e8e8;
+}
+
+/*** profile picture section ***/
+#proPicSection {
+	position: absolute;
+	height: 100%;
+	width: 40%;
+	display: inline-block;
+	text-align: center;
+	border-right: 3px solid #87cefa;
+	box-sizing: border-box;
+}
+
+#proPicSection img {
+	width: 300px;
+	border-radius: 35px;
+	position: relative;
+	border: 1px solid black;
+}
+
+/*** user info section ***/
+#infoSection {
+	position: absolute;
+	height: 100%;
+	width: 60%;
+	display: inline-block;
+	left: 40%;
+	text-align: center;
+}
+
+#innerInfo {
+	position: relative;
+}
+
+#innerInfo p, #innerInfo h2 {
+	font-weight: bold;
+	margin-bottom: 20px;
+	font-size: 1.2em;
+}
+
+#innerInfo h2 {
+	font-size: 2.0em;
+	text-decoration: underline;
+}
+
+
+
