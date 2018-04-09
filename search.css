@@ -1,0 +1,201 @@
+/***
+fontpage.css: all styling for front page landing document
+***/
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+html {
+	position: relative;
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	background-color: #2d2d2d;
+	position: relative;
+	height: 100%;
+	width: 100%;
+	font-family: Tahoma, Geneva, sans-serif;
+}
+
+/*** Header styling ***/
+#header {
+	position: relative;
+	height: 15%;
+	width: 100%;
+	background: white;
+	box-sizing: border-box;
+	border-bottom: 3px solid #87cefa;
+	text-align: center;
+}
+
+/* 2.348 aspect ratio */
+#header img {
+	position: relative;
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	height: 98%;
+}
+
+
+
+/*** modal styling ***/
+
+.modal-header {
+	background: black;
+	color: white;
+}
+
+.modal-header .close {
+	color: red;
+	opacity: 1.0;
+	text-shadow: none;
+}
+
+#signupChoice .modal-body {
+	text-align: center;
+}
+
+#signupChoice .modal-body h3 {
+	margin: 15px;
+}
+
+#signupChoice .modal-body .special {
+	padding: 15px;
+	border-radius: 10px;
+	font-size: 1.2em;
+	background: black;
+	color: white;
+	border: 0;
+	margin: 0 20px;
+	width: 200px;
+}
+
+.black-button {
+	border-radius: 10px;
+	font-size: 1.2em;
+	background: black;
+	color: white;
+	padding: 10px;
+}
+
+.black-button:hover {
+	color: #87cefa;
+	background: black;
+}
+
+#header .signing:hover, #signupChoice .modal-body .special:hover {
+	color: #87cefa;
+}
+
+/*** Main content below header styling ***/
+
+#mainFrontPicture {
+	position: relative;
+	height: 85%;
+	width: 100%;
+	background-image: url('musician.jpg');
+	background-repeat: no-repeat;
+	background-position: 0 -250px; 
+}
+
+#description {
+	position: absolute;
+	left: 50%;
+	height: 100%;
+	width: 50%;
+	text-align: center;
+}
+
+#description h1 {
+	margin: 0;
+}
+
+#description h1 span {
+	font-size: 0.7em;
+	background: white;
+	border-radius: 15px;
+	padding: 20px;
+	border: 2px solid #87cefa;
+	background: black;
+	color: white;
+}
+
+#wrapper1 {
+	width: 100%;
+}
+
+#parameters {
+	border-radius: 10px;
+	padding: 10px;
+	float: left;
+	display: inline-block;
+	width: 15%;
+	color: black;
+	background: white;
+	margin-top: 1%;
+	margin-left: 1%;
+}
+
+#searchwrapper {
+	background: white;
+	border-radius: 10px;
+	padding: 20px;
+	float: right;
+	display: inline-block;
+	width: 70%;
+	margin-right: 5%;
+	margin-left: 5%;
+	margin-top: 1%;
+}
+
+#searchtextbox {
+	background: white;
+	margin: 0 auto;
+	width: 100%;
+	padding: 0%;
+}
+
+#results {
+	background: white;
+	color: black;
+}
+
+h1 {
+	margin-top: 0px;
+	text-align: center;
+	font-size: 18px;
+}
+
+.result {
+	height: 300px;
+	padding: 15px;
+}
+
+.result img{
+	width: 150px;
+}
+
+.result-img {
+	float: left;
+}
+
+.result-info {
+	width: 80%;
+	padding: 10px;
+	text-align: left;
+	float: right;
+}
+
+.result-info ul {
+	list-style-position: inside;
+}
+
+.result-info em {
+	font-size: 23px;
+	font-style: normal;
+}
