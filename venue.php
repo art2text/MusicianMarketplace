@@ -1,6 +1,34 @@
 <!--
-venue.html: Generic profile page for venues who create an account
+venue.php: Generic profile page for venues who create an account
 -->
+
+<?php
+	// grab all the venue holder's infomation from the database based on id
+	require("databaseHandler.php");
+	$id = $_GET["id"];
+
+
+	$dbHandler = new databaseHandler();
+
+	$sql = "SELECT name, email FROM venue_data WHERE id='". $id ."'";
+	$rows = $dbHandler->runCommand($sql);
+
+	$name;
+	$email;
+
+	foreach ($rows as $key => $row) {
+		foreach ($row as $innerKey => $value) {
+	 		if ($innerKey == "name") {
+	 			$name = $value;
+	 		}
+	 		else if ($innerKey == "email") {
+	 			$email = $value;
+	 		}
+		} 
+	}
+
+
+?>
 
 <html>
 
@@ -28,7 +56,7 @@ venue.html: Generic profile page for venues who create an account
 		header content
 		-->
 		<div id = "header">
-			<img src = "logo.png" />
+			<img src = "logo.PNG" />
 		</div>
 
 		<!--
@@ -48,10 +76,14 @@ venue.html: Generic profile page for venues who create an account
 			-->
 			<div id = "infoSection">
 				<div id ="innerInfo">
-					<h2>Mainley's Tavern</h2>
-					<p>Location: Waterville, ME</p>
-					<p>Asking Price: $20/hour</p>
-					<p>Contact Info: venue@example.com</p>
+					<?php
+						echo ' 
+							<h2>'. $name .'</h2>
+							<p>Location: Waterville, ME</p>
+							<p>Asking Price: $20/hour</p>
+							<p>Contact Info: '. $email .'</p>
+						';
+					?>
 					<button type="button" class="btn btn-warning">Edit Info</button>
 				</div>
 			</div>

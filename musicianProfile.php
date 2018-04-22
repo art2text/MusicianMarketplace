@@ -2,6 +2,42 @@
 musicianProfile.html: Generic profile page for musicians who create an account
 -->
 
+<?php
+	// grab all the musician's infomation from the database based on id
+	require("databaseHandler.php");
+	$id = $_GET["id"];
+
+
+	$dbHandler = new databaseHandler();
+
+	$sql = "SELECT name, email, password, instrument, price FROM musician_data WHERE id='". $id ."'";
+	$rows = $dbHandler->runCommand($sql);
+
+	$name;
+	$email;
+	$instrument;
+	$price;
+
+	foreach ($rows as $key => $row) {
+		foreach ($row as $innerKey => $value) {
+	 		if ($innerKey == "name") {
+	 			$name = $value;
+	 		}
+	 		else if ($innerKey == "email") {
+	 			$email = $value;
+	 		}
+	 		else if ($innerKey == "instrument") {
+	 			$instrument = $value;
+	 		}
+	 		else if ($innerKey == "price") {
+	 			$price = $value;
+	 		}
+		} 
+	}
+
+
+?>
+
 <html>
 
 	<!--
@@ -28,7 +64,7 @@ musicianProfile.html: Generic profile page for musicians who create an account
 		header content
 		-->
 		<div id = "header">
-			<img src = "logo.png" />
+			<img src = "logo.PNG" />
 		</div>
 
 		<!--
@@ -48,12 +84,16 @@ musicianProfile.html: Generic profile page for musicians who create an account
 			-->
 			<div id = "infoSection">
 				<div id ="innerInfo">
-					<h2>John Doe</h2>
-					<p>Music Style: Guitarist</p>
-					<p>Location: Waterville, ME</p>
-					<p>Price Range: $20/hour</p>
-					<p>Contact Info: johndoe@example.com</p>
-					<p>Demo: video@example.com</p>
+					<?php
+					echo '
+						<h2>' . $name . '</h2>
+						<p>Music Style: ' . $instrument . '</p>
+						<p>Location: Waterville, ME</p>
+						<p>Price Range: $' . $price . '/hour</p>
+						<p>Contact Info: ' . $email .'</p>
+						<p>Demo: video@example.com</p>
+					';
+					?>
 					<button type="button" class="btn btn-warning">Edit Info</button>
 				</div>
 			</div>
