@@ -29,7 +29,7 @@ index.html: main landing page for sign-in/sign-up
 		header bar at top of screen
 		-->
 		<div id = "header">
-			<img id = "logo" src = "logo.png" />
+			<img id = "logo" src = "logo.PNG" />
 		</div>
 
 		<div id="wrapper1">
