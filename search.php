@@ -47,50 +47,52 @@ index.html: main landing page for sign-in/sign-up
 				</select>
 			</div>
 			<div id="searchwrapper">
-	 			<input id="searchtextbox" type="text" placeholder="search">
-	 			<div id="results">
-	 				<div class="result">
-	 					<div class="result-img">
-	 						<img src="dog.jpg" align="left">
+				<div id="searchboxwrapper">
+	 				<img src="search.png"><input id="searchtextbox" type="text" placeholder="search">
+	 			</div>
+	 			<div class="results">
+	 				<div class="col">
+	 					<div class="entry">
+	 						<b>Benjamin</b>
+	 						<img src="dog.jpg" align="right">
+	 						<br>- 5 years young
+	 						<br>- a good boi
+	 						<br>- bad at guitar
+	 						<br>
+	 						<br><button type="button"><img src="mail.png"></button>
 	 					</div>
-	 					<div class="result-info">
-	 						<em>Benjamin</em><br>
-	 						<i>4 human years, New York City</i>
+	 						<div class="entry">
+	 						<b>Benjamin</b>
+	 						<img src="dog.jpg" align="right">
+	 						<br>- 5 years young
+	 						<br>- a good boi
+	 						<br>- bad at guitar
 	 						<br>
-	 						<br>
-	 						am benjamin, u can call me ben. i am a certified good boi. im pretty ok at drums but im best at getting belly rubs + pats
-	 						<br>
-	 						<br>
-	 						<ul>
-	 							<li>6 months experience drums
-	 							<li>2 months experience piano
-	 							<li>loves doing weddings!
-	 							<li>will accept pay in bacon
-	 							<li>$100/hr
+	 						<br><button type="button"><img src="mail.png"></button>
 	 					</div>
+	 					<div class="entry">text</div>
+	 					<div class="entry">text</div>
 	 				</div>
-	 				<div class="result">
-	 					<div class="result-img">
-	 						<img src="dog2.jpg" align="left">
-	 					</div>
-	 					<div class="result-info">
-	 						<em>Austin</em><br>
-	 						<i>6 human years, New York City</i>
-	 						<br>
-	 						<br>
-	 						Please hire me! I have a lot to offer and good prices. 
-	 						<br>
-	 						<br>
-	 						<ul>
-	 							<li>1 year experience on bass guitar
-	 							<li>also learning how to DJ (DJ Barkz)
-	 							<li>$150/hr
-	 					</div>
+	 				<div class="col">
+	 					<div class="entry">text</div>
+	 					<div class="entry">text</div>
+	 					<div class="entry">text</div>
+	 					<div class="entry">text</div>
 	 				</div>
+		 			<div class="col">
+	 					<div class="entry">text</div>
+	 					<div class="entry">text</div>
+	 					<div class="entry">text</div>
+	 					<div class="entry">text</div>
+	 				</div> 				
 	 			</div>
 			</div>
 		<div>
 
+		<!--
+		JS file which assist with some positioning
+		-->
+		<script src = "frontPage.js"></script>
 
 
 

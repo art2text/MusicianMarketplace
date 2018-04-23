@@ -29,7 +29,6 @@ body {
 	background: white;
 	box-sizing: border-box;
 	border-bottom: 3px solid #87cefa;
-	text-align: center;
 }
 
 /* 2.348 aspect ratio */
@@ -43,87 +42,6 @@ body {
 
 
 
-/*** modal styling ***/
-
-.modal-header {
-	background: black;
-	color: white;
-}
-
-.modal-header .close {
-	color: red;
-	opacity: 1.0;
-	text-shadow: none;
-}
-
-#signupChoice .modal-body {
-	text-align: center;
-}
-
-#signupChoice .modal-body h3 {
-	margin: 15px;
-}
-
-#signupChoice .modal-body .special {
-	padding: 15px;
-	border-radius: 10px;
-	font-size: 1.2em;
-	background: black;
-	color: white;
-	border: 0;
-	margin: 0 20px;
-	width: 200px;
-}
-
-.black-button {
-	border-radius: 10px;
-	font-size: 1.2em;
-	background: black;
-	color: white;
-	padding: 10px;
-}
-
-.black-button:hover {
-	color: #87cefa;
-	background: black;
-}
-
-#header .signing:hover, #signupChoice .modal-body .special:hover {
-	color: #87cefa;
-}
-
-/*** Main content below header styling ***/
-
-#mainFrontPicture {
-	position: relative;
-	height: 85%;
-	width: 100%;
-	background-image: url('musician.jpg');
-	background-repeat: no-repeat;
-	background-position: 0 -250px; 
-}
-
-#description {
-	position: absolute;
-	left: 50%;
-	height: 100%;
-	width: 50%;
-	text-align: center;
-}
-
-#description h1 {
-	margin: 0;
-}
-
-#description h1 span {
-	font-size: 0.7em;
-	background: white;
-	border-radius: 15px;
-	padding: 20px;
-	border: 2px solid #87cefa;
-	background: black;
-	color: white;
-}
 
 #wrapper1 {
 	width: 100%;
@@ -131,19 +49,17 @@ body {
 
 #parameters {
 	border-radius: 10px;
-	padding: 10px;
+	padding: 20px;
 	float: left;
 	display: inline-block;
 	width: 15%;
 	color: black;
 	background: white;
-	margin-top: 1%;
-	margin-left: 1%;
+	margin-top: 5%;
+	margin-left: 5%;
 }
 
 #searchwrapper {
-	background: white;
-	border-radius: 10px;
 	padding: 20px;
 	float: right;
 	display: inline-block;
@@ -155,14 +71,33 @@ body {
 
 #searchtextbox {
 	background: white;
-	margin: 0 auto;
-	width: 100%;
+	/*margin: 0 auto;*/
+	width: 93%;
 	padding: 0%;
+	margin-left: 10px;
 }
 
-#results {
+#searchboxwrapper {
 	background: white;
-	color: black;
+	padding: 15px;
+	border-radius: 10px;
+	margin-left: 5px;
+}
+
+#searchboxwrapper img {
+	background: #a3a3a3;
+	border-radius: 999999px;
+	padding: 2px;
+}
+
+.results {
+  display: flex;
+  justify-content: space-between;
+}
+
+.col {
+  flex: 1;
+  width: 32%;
 }
 
 h1 {
@@ -171,13 +106,16 @@ h1 {
 	font-size: 18px;
 }
 
-.result {
-	height: 300px;
+.entry {
+	background: white;
+	border-radius: 10px;
+	margin: 20px;
+	height: 25%;
 	padding: 15px;
 }
 
-.result img{
-	width: 150px;
+.entry img{
+	width: 100px
 }
 
 .result-img {
@@ -191,11 +129,23 @@ h1 {
 	float: right;
 }
 
-.result-info ul {
-	list-style-position: inside;
+.entry button {
+	border-radius: 10px;
+	width: 100%;
+	font-size: 1.2em;
+	background: #a3a3a3;
+	color: white;
+	padding: 4px;
+	transition: all 0.3s ease-in-out;
 }
 
-.result-info em {
-	font-size: 23px;
-	font-style: normal;
+.entry button:hover{
+	background: #696969;
+	transition: all 0.3s ease-in-out;
+}
+
+.entry button img {
+	margin-left: auto;
+	margin-right: auto;
+	width: 15%;
 }
