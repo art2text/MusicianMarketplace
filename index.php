@@ -1,5 +1,5 @@
 <!--
-index.php: main landing page for sign-in/sign-up users
+index.html: main landing page for sign-in/sign-up users
 -->
 
 <html>

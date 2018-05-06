@@ -12,7 +12,7 @@ var winWidth = $(window).width();
 
 $('#logo').css("left", winWidth / 2 - 0.5 * imgWidth + 'px');
 
-// handle musician signup
+// musician signup
 $(document).on('click', '#mSignup', function(){
 	var name       = $("#mSignupName").val();
 	var email      = $("#mSignupEmail").val();
@@ -31,7 +31,7 @@ $(document).on('click', '#mSignup', function(){
 
 });
 
-// handle venue signup
+// venue signup
 $(document).on('click', '#vSignup', function(){
 	var name       = $("#vSignupName").val();
 	var email      = $("#vSignupEmail").val();
@@ -47,7 +47,7 @@ $(document).on('click', '#vSignup', function(){
 	
 });
 
-// handle any user signin request
+// sign in for either type of user
 $(document).on('click', '#signinButton', function(){
 	var email = $("#signinEmail").val();
 	var pwd = $("#signinPwd").val();

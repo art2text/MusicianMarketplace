@@ -1,6 +1,52 @@
-<!--
-index.html: main landing page for sign-in/sign-up
--->
+<?php
+/***
+search.php: search page across entire website
+***/
+
+	require("databaseHandler.php");
+
+	// gather which name was searched
+	$nameSearched = $_GET['nameSearched'];
+	$dbHandler = new databaseHandler();
+
+	// gather information on search term from database
+	$sql = "SELECT id, name, email, instrument, price FROM musician_data WHERE name LIKE '" . $nameSearched . "%'";
+	$tableResults = $dbHandler->runCommand($sql);
+
+	if (!$nameSearched) {
+		$tableResults = array();
+	}
+
+	// organize results into 3 columns of data
+	$tempTableResults = array();
+	$rowCounter = 0;
+	foreach ($tableResults as $key => $row) {
+		array_push($tempTableResults, array());
+		foreach ($row as $innerKey => $value) {
+	 		$tempTableResults[$rowCounter][$innerKey] = $value;
+		}
+		$rowCounter++; 
+	}
+	$tableResults = $tempTableResults;
+
+	$col1Results = array();
+	$col2Results = array();
+	$col3Results = array();
+
+	for ($i = 0; $i < count($tableResults); $i++) {
+		if ($i % 3 == 0 && $i != 1 && $i != 2) {
+			array_push($col1Results, $tableResults[$i]);
+		}
+		else if ($i % 3 == 1 && $i != 0 && $i != 2) {
+			array_push($col2Results, $tableResults[$i]);
+		}
+		else if ($i % 3 == 2 && $i != 0 && $i != 1) {
+			array_push($col3Results, $tableResults[$i]);
+		}
+	}
+
+
+?>
 
 <html>
 
@@ -48,44 +94,54 @@ index.html: main landing page for sign-in/sign-up
 			</div>
 			<div id="searchwrapper">
 				<div id="searchboxwrapper">
-	 				<img src="search.png"><input id="searchtextbox" type="text" placeholder="search">
+	 				<img id = "searchButton" src="search.png"><input id="searchtextbox" type="text" placeholder="search">
 	 			</div>
+
+	 			<!--
+				show results columns
+				-->
 	 			<div class="results">
-	 				<div class="col">
-	 					<div class="entry">
-	 						<b>Benjamin</b>
-	 						<img src="dog.jpg" align="right">
-	 						<br>- 5 years young
-	 						<br>- a good boi
-	 						<br>- bad at guitar
-	 						<br>
-	 						<br><button type="button"><img src="mail.png"></button>
-	 					</div>
-	 						<div class="entry">
-	 						<b>Benjamin</b>
-	 						<img src="dog.jpg" align="right">
-	 						<br>- 5 years young
-	 						<br>- a good boi
-	 						<br>- bad at guitar
-	 						<br>
-	 						<br><button type="button"><img src="mail.png"></button>
-	 					</div>
-	 					<div class="entry">text</div>
-	 					<div class="entry">text</div>
-	 				</div>
-	 				<div class="col">
-	 					<div class="entry">text</div>
-	 					<div class="entry">text</div>
-	 					<div class="entry">text</div>
-	 					<div class="entry">text</div>
-	 				</div>
-		 			<div class="col">
-	 					<div class="entry">text</div>
-	 					<div class="entry">text</div>
-	 					<div class="entry">text</div>
-	 					<div class="entry">text</div>
-	 				</div> 				
+	 			<?php
+	 				echo '<div class="col">';
+	 				for ($i = 0; $i < count($col1Results); $i++) {
+	 					$dataRow = $col1Results[$i];
+ 						echo '<div class="entry">';
+ 						echo '<a href="musicianProfile.php?id='. $dataRow["id"] .'"<b>' . $dataRow['name'] . '</b></a>';
+ 						echo '<img src="dog.jpg" align="right">';
+ 						echo '<br>-Plays ' . $dataRow['instrument'];
+ 						echo '<br>-Hourly Price ' . $dataRow['price'];
+ 						echo '</div>';
+	 				}
+	 				echo '</div>';
+
+	 				echo '<div class="col">';
+	 				for ($i = 0; $i < count($col2Results); $i++) {
+	 					$dataRow = $col2Results[$i];
+ 						echo '<div class="entry">';
+ 						echo '<a href="musicianProfile.php?id='. $dataRow["id"] .'"<b>' . $dataRow['name'] . '</b></a>';
+ 						echo '<img src="dog.jpg" align="right">';
+ 						echo '<br>-Plays ' . $dataRow['instrument'];
+ 						echo '<br>-Hourly Price ' . $dataRow['price'];
+ 						echo '</div>';
+	 				}
+	 				echo '</div>';
+
+	 				echo '<div class="col">';
+	 				for ($i = 0; $i < count($col3Results); $i++) {
+	 					$dataRow = $col3Results[$i];
+ 						echo '<div class="entry">';
+ 						echo '<a href="musicianProfile.php?id='. $dataRow["id"] .'"<b>' . $dataRow['name'] . '</b></a>';
+ 						echo '<img src="dog.jpg" align="right">';
+ 						echo '<br>-Plays ' . $dataRow['instrument'];
+ 						echo '<br>-Hourly Price ' . $dataRow['price'];
+ 						echo '</div>';
+	 				}
+	 				echo '</div>';
+	 				
+	 			?>
+
 	 			</div>
+
 			</div>
 		<div>
 
@@ -93,6 +149,7 @@ index.html: main landing page for sign-in/sign-up
 		JS file which assist with some positioning
 		-->
 		<script src = "frontPage.js"></script>
+		<script src = "search.js"></script>
 
 
 

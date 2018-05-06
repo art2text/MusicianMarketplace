@@ -1,15 +1,16 @@
 <?php
-	/***
-	validateLogin.php: validate a user's login request
-	***/
+
+/***
+validateLogin.php: validates login for musicians and venues
+***/
 
 	require("databaseHandler.php");
 
-	// submitted email and password
+	// get email and password from form
 	$email = $_POST["email"];
 	$pwd   = $_POST["pwd"];
 
-	// check musician login authentication
+	// check musician login
 	$dbHandler = new databaseHandler();
 	$sql = "SELECT id FROM musician_data WHERE email='". $email ."' AND password='". $pwd . "'";
 	$id = $dbHandler->runCommand($sql);
@@ -23,7 +24,7 @@
 		}
 	}
 
-	// check venue login authentication
+	// check venue login
 	$sql = "SELECT id FROM venue_data WHERE email='". $email ."' AND password='". $pwd ."'";
 	$id = $dbHandler->runCommand($sql);
 

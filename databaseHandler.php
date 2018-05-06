@@ -1,12 +1,11 @@
 <?php
 
 /***
-databaseHandler.php: handles all database call executions
+databaseHandler.php: handles all database interaction, login information hidden for public use
 ***/
 
 class databaseHandler {
 	
-	// scrubbed login information
 	private $SERVER_NAME = "***";
 	private $USERNAME    = "***";
 	private $PASSWORD    = "***";
@@ -14,7 +13,7 @@ class databaseHandler {
 
 	public $connection = null;
 
-	// create database connection
+	// construct connection
 	public function __construct() {
 		$this->connection = new mysqli($this->SERVER_NAME, $this->USERNAME, $this->PASSWORD, $this->DATABASE);
 
@@ -28,7 +27,7 @@ class databaseHandler {
 		$this->connection->close();
 	}
 
-	// run a sql command
+	// run a sql command on the database
 	public function runCommand($sql) {
 		$result = $this->connection->query($sql);
 		return $result;
